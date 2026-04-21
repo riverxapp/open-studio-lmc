@@ -1,0 +1,561 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   **Task:** Create a new `portfolio.html` file based on the existing `index.html` and `innovative-startup/standalone.html` templates (Panda Innovative Startup template).
+    *   **Goal:** Create a customer-facing portfolio page that matches the visual system, layout rhythm, typography, navigation, footer, assets, and interaction patterns of `index.html`.
+    *   **Content:** Hero/banner, portfolio/projects grid, project descriptions, skills/services section, CTA/contact section, footer.
+    *   **Constraints:** Use semantic HTML, responsive layout, accessible headings. Reuse existing CSS/JS/assets from the template structure (vendor/css, vendor/js, etc.). Avoid external dependencies. Keep styling integrated with the current template (Panda Innovative Startup). Preserve unrelated sections (though this is a new file creation, so it means preserving the template structure defined in `index.html`).
+    *   **Execution Mode:** Patch (Create if missing: true).
+    *   **Output Format:** ONLY the final HTML text. No markdown, no prose.
+    *   **Context:** README.md defines the template metadata (Panda Innovative Startup). `index.html` provides the exact markup, head includes, body structure, and classes used in this specific repo version.
+
+2.  **Analyze Reference Files (`index.html`):**
+    *   **Head:** Standard meta tags, Title "Panda Innovative Startup | HTML5 Template", Favicon path `vendor/img/favicon.ico`, Bundle CSS `vendor/css/bundle.min.css`, Revolution Slider CSS, LineIcons, Fancybox, Owl Carousel, WOW, Cubeportfolio. Also custom `innovativ...` (likely `innovative-startup/custom.css` or similar, need to infer path from context). Looking at the truncated part: `<link href="innovativ...` suggests `innovative-startup/style.css` or similar. Let's look at standard Panda template structures usually found in these contexts. The reference shows `innovativ` cut off. I will assume standard paths consistent with `index.html`'s visible parts.
+    *   **Body Structure:**
+        *   Preloader (usually)
+        *   Header (Navbar)
+        *   Main Content (Sections)
+        *   Footer
+        *   Scripts (jQuery, Bootstrap, Revolution, Cubepo, Fancybox, Owl, WOW, etc.)
+    *   **Classes:** Bootstrap based (container, row, col-*, etc.), specific theme classes like `.section`, `.btn-theme`, `.heading-style-3`, `.portfolio-item`, `.service-box`, etc. (Based on typical Panda template naming conventions seen in the snippet).
+    *   **Navigation:** Likely an id-based nav or static links.
+    *   **Styling:** Inline `<style>` blocks might exist for overrides, but mostly external CSS.
+
+3.  **Determine File Creation Strategy:**
+    *   Since `portfolio.html` does not exist (Current HTML is empty), I need to construct the full file content following the `index.html` pattern exactly, but adapting the *content* within the main wrapper to be portfolio-specific.
+    *   **Head:** Copy `index.html` head structure exactly.
+    *   **Body:**
+        *   Copy Header/Nav (needs to link back to index/home).
+        *   **Hero:** Specific to Portfolio ("Our Works", "Portfolio", etc.).
+        *   **Portfolio Grid:** Use Cubeportfolio or Owl Carousel structure as seen in `innovative-startup/standalone.html` or `index.html` (if available). Given `innovative-startup/standalone.html` is referenced, it likely contains portfolio logic. I should mimic the grid structure there.
+        *   **Services/Skills:** A section showing what the developer/designer offers.
+        *   **CTA:** Contact section.
+        *   **Footer:** Copy `index.html` footer structure.
+        *   **Scripts:** Copy `index.html` script block exactly.
+
+4.  **Extracting Key Elements from `index.html` (Mental Reconstruction based on Truncation & Standards):**
+    *   *Meta:* charset, viewport, author, description.
+    *   *CSS Links:* bundle.min.css, revolution-settings.min.css, LineIcons.min.css, jquery.fancybox.min.css, owl.carousel.min.css, wow.css, cubeportfolio.min.css. Also likely a local CSS file for specific overrides (e.g., `assets/css/style.css` or `innovative-startup/style.css`). I'll stick to the visible paths in `index.html`: `vendor/css/bundle.min.css`, etc.
+    *   *Body Classes:* `html`, `body`, preloader div.
+    *   *Header:* Usually a `<header class="main-header">` or similar with a container, logo, nav.
+    *   *Sections:* Typically `id="hero"`, `id="about"`, `id="services"`, `id="portfolio"`, `id="contact"`.
+    *   *Portfolio Grid:* Often uses `.cp-container` inside a `.cubeportfolio` div.
+    *   *Footer:* Contains copyright, social icons, links.
+
+5.  **Drafting the Content:**
+    *   **Title:** Panda Portfolio | HTML5 Template (or specific to the request "Personal Portfolio"). I will adjust title slightly to fit the persona while keeping template fidelity.
+    *   **Hero:** Background image, H1 "Portfolio", Subtext.
+    *   **Projects:** Use the `.cbp-l-filtersbutton` style often found in Cubeportfolio examples in these templates.
+    *   **Services:** Grid of cards.
+    *   **Contact:** Form + Info.
+
+6.  **Refining Paths:**
+    *   `index.html` uses relative paths like `vendor/css/...`.
+    *   `innovative-startup/standalone.html` uses parent directory paths like `../vendor/css/...`.
+    *   Since `portfolio.html` is requested in the root (implied by `Target file: portfolio.html` alongside `index.html`), I should use the same paths as `index.html` (`vendor/css/...`).
+    *   *Correction:* If `index.html` is in the root, `portfolio.html` should be in the root. So `vendor/...` is correct.
+    *   I need to ensure I don't break the existing structure. I will mimic the `index.html` header and footer exactly.
+
+7.  **Implementation Steps:**
+    *   Start with `index.html` head structure.
+    *   Insert modified title.
+    *   Build Header (Nav).
+    *   Build Hero Section (Portfolio focus).
+    *   Build Portfolio Grid (using Cubeportfolio structure common in Panda themes).
+    *   Build Services/Skills Section.
+    *   Build Contact/CTA Section.
+    *   Build Footer.
+    *   Insert Script footers matching `index.html`.
+
+8.  **Wait - Check Constraint:** "You rewrite HTML safely. Return ONLY the final HTML text." "Current HTML: [Empty/New file]". So I am generating the full file content from scratch based on the `index.html` template structure provided in the context.
+
+9.  **Specific Code Details:**
+    *   Look at `index.html` snippet for class names: `.preloader`, `.main-header`, `.menu-wrapper`, `.navigation`, `.home-hero`, `.section`, `.container`, `.row`, `.col-md-`, `.btn`, `.btn-theme`.
+    *   Script files: `jquery-3.5.1.min.js`, `popper.js`, `bootstrap.min.js`, `revolution-settings.min.js`, `cubepo.min.js` (likely `jquery.cubeportfolio.min.js`), `fancybox.min.js`, `owl.carousel.min.js`, `wow.min.js`, `custom-script.js` (or `bundle.js`).
+    *   In `index.html` snippet, scripts are listed at the bottom. I need to replicate that order.
+    *   In `index.html` snippet, there is a reference to `innovativ...` in CSS. It cuts off. Commonly `assets/css/theme.css` or similar. However, to be safe and match `index.html` exactly where possible, I will use the explicitly named ones and assume `index.html` has the necessary styles via `bundle.min.css` and `custom`. Wait, the prompt says "Reuse existing CSS/JS/assets rather than introducing a new design system".
+    *   I will use the standard paths found in `index.html` and `standalone.html`. Since `portfolio.html` is usually at the same level as `index.html`, `vendor/` is correct.
+
+10. **Final Review against Constraints:**
+    *   Only return HTML text? Yes.
+    *   No markdown? Yes.
+    *   Match template? Yes.
+    *   Semantic HTML? Yes.
+    *   Accessible? Yes (alt text, headings).
+    *   Context alignment (Panda Innovative Startup)? Yes.
+
+    *Self-Correction on Script/CSS:* Since I cannot see the *entire* `index.html` due to truncation in the prompt, I must rely on the visible parts which define the core structure. The visible part ends with `<script src="js/revolution.tools.min.js"></script> ... <script src="js/custom-script.js"></script>`. I will approximate the full list based on standard Panda templates if truncated, or stick strictly to what `index.html` implies exists.
+    Actually, looking closely at the prompt's `index.html` trace:
+    It lists:
+    1. bundle.min.css
+    2. revolution-settings.min.css
+    3. LineIcons.min.css
+    4. jquery.fancybox.min.css
+    5. owl.carousel.min.css
+    6. wow.css
+    7. cubeportfolio.min.css
+    8. innovative... (cut off) -> Likely `theme.css` or `custom.css`. I will include `vendor/css/custom.css` if it exists or generic `css/style.css`. To be safest regarding "preserving unrelated sections", I should try to replicate the `head` tags of `index.html` as closely as the snippet allows.
+    Snippet end: `<link href="innovativ` -> This looks like a typo in the prompt trace or a short filename. I will assume `innovative-startup/custom.css` or similar. But wait, `standalone.html` uses `../vendor/css/...`.
+    Decision: I will use the paths shown in `index.html`'s beginning (relative to root) for consistency.
+    For scripts, I will follow the `bundle.min.js` approach if present, but the snippet implies multiple JS files. I will group them logically as per the snippet flow: jQuery -> Popper -> Bootstrap -> Plugins -> Revolution -> Custom.
+
+    *Crucial Step:* Ensure the HTML is valid and self-contained as a new file.
+
+    *Structure Plan:*
+    1. `<!DOCTYPE html>`
+    2. `<html>` with lang.
+    3. `<head>` (meta, title, all css links from index.html pattern).
+    4. `<body>`
+       - Preloader
+       - Header (Nav)
+       - Hero Section (Id: portfolio-hero)
+       - Projects Section (Id: portfolio-grid)
+       - Skills/Services Section (Id: services)
+       - Contact Section (Id: contact)
+       - Footer
+       - Scripts (all js links from index.html pattern)
+    5. Closing tags.
+
+    *Content:*
+    - Nav: Home, Portfolio, Services, Contact.
+    - Hero: "Explore Our Work", "Showcasing creativity and innovation."
+    - Grid: Project items (img placeholders, titles, categories).
+    - Services: List of skills.
+    - Contact: Form.
+    - Footer: Copyright, links.
+
+    Let's assemble. Note: `index.html` had `title>Panda Innovative Startup | HTML5 Template</title>`. I'll update to `Panda Portfolio | HTML5 Template`.
+
+    *Caution:* The prompt says "Update this HTML file... Create if missing". "Current HTML:" is empty/missing. So I provide the whole file.
+
+    *Paths:* `index.html` uses `vendor/`, `js/`, `assets/`. I will align with `index.html`.
+    `index.html` line 25: `<link rel="stylesheet" href="vendor/css/cubeportfolio.min.css">`
+    `index.html` line 26: `<link href="innovativ` (Cut off). I will complete this sensibly based on standard structure, e.g., `innovative-startup/custom.css` or just omit if unsure to prevent breaking. Better to stick to known `vendor/css/` if possible. However, since I must preserve template structure, I should include the missing CSS if I can infer it. Let's look at `standalone.html`. It has `../vendor/css/cubeportfolio.min.css` and cuts off similarly.
+    Actually, looking at the `index.html` snippet provided in the prompt:
+    `<link href="innovativ` is the last thing.
+    To be safe and robust, I will use the explicitly named ones in the snippet plus `vendor/css/theme.css` which is common, or simply stop at `cubeportfolio.min.css` if I assume the rest is loaded dynamically or in bundle. But `bundle.min.css` is first. The others are plugins.
+    Okay, I will include the visible ones and add a generic `custom.css` link placeholder if needed, but better to follow the snippet's explicit list.
+    Wait, `index.html` line 10: `<link rel="stylesheet" href="vendor/css/bundle.min.css">`.
+    I will keep the head clean and aligned with the provided snippet's visible lines + logical extensions.
+
+    *Scripts:*
+    `js/jquery-3.5.1.min.js`
+    `js/popper.min.js`
+    `js/bootstrap.min.js`
+    `js/revolution.settings.min.js` (or similar)
+    `js/wow.min.js`
+    `js/jquery.cubeportfolio.min.js`
+    `js/jquery.fancybox.min.js`
+    `js/owl.carousel.min.js`
+    `js/custom.js`
+
+    I will synthesize this based on the visible script tags in `index.html` snippet (which was partially hidden but implied).
+    Visible scripts in `index.html` snippet: None fully visible near the bottom, only head.
+    Wait, I have to infer the script order from `standalone.html` snippet which cuts off earlier too.
+    Actually, standard Panda Template has:
+    Vendor/Assets structure.
+    I will use the most standard implementation for this specific template "Panda Innovative Startup" which typically resides in `vendor/js/` or `js/`.
+    Given `standalone.html` references `../vendor/`, and `index.html` references `vendor/`.
+    I will stick to `vendor/` for CSS and `js/` or `vendor/js/` for JS. `index.html` usually puts scripts at `/js/`.
+    Let's assume `js/` for scripts based on common patterns unless specified.
+    Actually, checking `index.html` context in prompt:
+    Line 6: `meta content="width=device-width..."`
+    ...
+    Last visible line in prompt context for `index.html`: `<link href="innovativ`
+    There is no script tag visible in the snippet for `index.html` head.
+    However, the prompt asks to "reuse existing CSS/JS/assets rather than introducing a new design system".
+    I will place the script includes in the footer of the body, using the standard set for this template (jQuery, Bootstrap, Theme Specifics).
+
+    Let's build the HTML.
+
+    *Accessibility Check:* `nav`, `main`, `footer`, `h1-h6` hierarchy, `alt` attributes.
+    *Semantic:* `section`, `article`, `figure`.
+
+    *One constraint:* "Use the numbered view for grounding and keep edits aligned to exact source lines."
+    Since I am creating a new file, I don't have source lines to align to except implicitly matching the structure described. I will generate the full file as a patch replacement for "file path: portfolio.html".
+
+    *Refinement on Missing CSS Link:* The snippet cuts off at `innovativ`. I will assume it is `innovative-startup/custom.css` based on folder name `innovative-startup`. Or I can just use `custom.css`. Given `standalone.html` is in `innovative-startup/` folder, it uses `../vendor/`. If `portfolio.html` is at root, `vendor/` works. If `portfolio.html` is in `innovative-startup/`? The prompt says `Target file: portfolio.html`. Usually implies root unless specified `innovative-startup/portfolio.html`. I will place it at root `portfolio.html` so `vendor/` is correct (matching `index.html`).
+
+    I will write the code now.
+
+    *Wait, one more check:* "Return ONLY the final HTML text."
+    "Do not output prose or markdown."
+    "Preserve unrelated sections." (Since creating new, preserve template structure).
+
+    I will draft the HTML content.
+
+    (Self-Correction): Ensure I don't leave out the preloader or sticky header if they are in the template. The snippet showed `Preloader` logic sometimes in these templates. I'll add a minimal preloader to stay safe with the "Template Manifest" rules.
+
+    (Another Check): The prompt mentions "Reference paths: - README.md - index.html - innovative-startup/standalone.html".
+    `standalone.html` starts with `<!DOCTYPE html>`...
+    I will follow `index.html` structure more closely as it's the primary home.
+
+    Final check on scripts:
+    `index.html` snippet didn't show scripts.
+    `standalone.html` snippet didn't show scripts.
+    I will use standard inclusion for Panda Template:
+    `vendor/js/jquery-3.5.1.min.js`
+    `vendor/js/popper.min.js`
+    `vendor/js/bootstrap.min.js`
+    `vendor/js/revolution.settings.min.js` (Wait, CSS had revolution-settings, JS should match).
+    `vendor/js/wow.min.js`
+    `vendor/js/jquery.cubeportfolio.min.js`
+    `vendor/js/jquery.fancybox.min.js`
+    `vendor/js/owl.carousel.min.js`
+    `vendor/js/main.js` (or custom.js)
+
+    Actually, looking at `index.html` snippet again:
+    `<link rel="stylesheet" href="vendor/css/cubeportfolio.min.css">`
+    It implies `vendor/css/` for CSS.
+    Scripts are likely `vendor/js/` or `js/`. I will use `vendor/js/` to match the vendor directory structure seen in CSS.
+
+    Let's create the file.
+
+    (Note on "innovativ"): I will replace that cutoff link with `vendor/css/theme.css` or `vendor/css/innovative-startup/style.css`. Given `standalone.html` has `innovativ...` cut off, I'll prioritize functional CSS links that exist. I will omit the potentially broken cutoff link if it's ambiguous, or restore the full likely path `vendor/css/innovative-startup/custom.css`. I'll go with a safer generic `custom.css` inside vendor or omit if risky. Best to include the `bundle` which covers basics. I'll skip the truncated specific one to avoid 404 if I guess wrong, but the instructions say "preserve template structure". I will try to reconstruct the likely path `innovative-startup/style.css` as it sits in the repo context mentioned (`innovative-startup/standalone.html`).
+    Actually, to be safest with "Safe HTML rewriting", I will stick to the confirmed paths.
+    Confirmed: `vendor/css/bundle.min.css`, `revolution-settings.min.css`, `LineIcons.min.css`, `fancybox`, `owl`, `wow`, `cubeportfolio`.
+    The cutoff `innovativ` is likely `innovative-startup/custom.css`. I will include it as it's part of the specific template branding.
+    Path: `innovative-startup/style.css` or `css/style.css`. I'll use `innovative-startup/style.css` as it matches the folder context of the standalone file.
+    Wait, `index.html` is root. `innovative-startup` is a subfolder. So `innovative-startup/style.css` works.
+
+    Let's finalize the script order based on common Panda templates:
+    `vendor/js/jquery.min.js`
+    `vendor/js/popper.js`
+    `vendor/js/bootstrap.js`
+    `vendor/js/plugins.js` (Often bundles plugin init) or individual.
+    I'll include the individual ones explicitly mentioned in CSS context (Wow, Fancybox, Cube, Owl).
+    And `custom.js`.
+
+    Ready to write.
+
+    Wait, I notice `standalone.html` uses `../vendor`.
+    `index.html` uses `vendor`.
+    If `portfolio.html` is created at root (same as `index.html`), `vendor` is correct.
+    I will proceed with `vendor/`.
+
+    One last thing: "Use the numbered view for grounding".
+    Since I'm generating from scratch, I won't reference specific line numbers in the output, but I will respect the implied line counts and structure.
+
+    Output format: Raw HTML string. No markdown fences.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Author -->
+    <meta name="author" content="Themes Industry">
+    <!-- Description -->
+    <meta name="description" content="Panda is a highly creative, modern, visually stunning and Bootstrap responsive multipurpose studio and portfolio HTML5 template with ready home page demos.">
+    <!-- Page Title -->
+    <title>Panda Portfolio | HTML5 Template</title>
+    <!-- Favicon -->
+    <link href="vendor/img/favicon.ico" rel="icon">
+    <!-- Bundle -->
+    <link rel="stylesheet" href="vendor/css/bundle.min.css">
+    <!-- Revolution Slider CSS Files -->
+    <link rel="stylesheet" href="vendor/css/revolution-settings.min.css">
+    <!-- Plugin Css -->
+    <link href="vendor/css/LineIcons.min.css" rel="stylesheet">
+    <link href="vendor/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="vendor/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="vendor/css/wow.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/css/cubeportfolio.min.css">
+    <link href="innovative-startup/style.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        .portfolio-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('vendor/img/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .portfolio-section-title {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .project-item figure {
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .project-item img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-item:hover img {
+            transform: scale(1.05);
+        }
+        .project-info h3 {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+        }
+        .service-card {
+            padding: 2rem;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-light">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg fixed-top transparent">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="vendor/img/logo.png" alt="Brand Logo" width="150">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="lni-menu"></span>
+                </button>
+                <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mr-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Portfolio Hero Banner -->
+    <section class="portfolio-hero section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Our Portfolio</h1>
+            <p class="lead mt-3">Showcasing our best work and innovation across various platforms.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Projects Grid -->
+    <section id="projects" class="section pt-0">
+        <div class="container">
+            <div class="portfolio-section-title">
+                <h2>Recent Works</h2>
+                <p class="text-muted">Check out some of our latest projects.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters pb-4 d-flex justify-content-center gap-3 flex-wrap">
+                <button class="btn btn-theme btn-sm active" data-filter="*">All</button>
+                <button class="btn btn-theme btn-sm" data-filter=".web-design">Web Design</button>
+                <button class="btn btn-theme btn-sm" data-filter=".app-dev">App Dev</button>
+                <button class="btn btn-theme btn-sm" data-filter=".marketing">Marketing</button>
+            </div>
+
+            <!-- Cube Portfolio Container -->
+            <div class="row cbp l-filters-button">
+                <!-- Item 1 -->
+                <div class="col-12 col-md-6 col-lg-4 mix web-design">
+                    <div class="project-item">
+                        <figure>
+                            <img src="vendor/img/project1.jpg" alt="Project 1" />
+                            <a href="#" data-fancybox="gallery" class="overlay">
+                                <span class="lni-check-board"></span>
+                            </a>
+                        </figure>
+                        <div class="project-info">
+                            <h3>E-Commerce Platform</h3>
+                            <p class="text-muted small">Web Design</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="col-12 col-md-6 col-lg-4 mix app-dev">
+                    <div class="project-item">
+                        <figure>
+                            <img src="vendor/img/project2.jpg" alt="Project 2" />
+                            <a href="#" data-fancybox="gallery" class="overlay">
+                                <span class="lni-check-board"></span>
+                            </a>
+                        </figure>
+                        <div class="project-info">
+                            <h3>Mobile Finance App</h3>
+                            <p class="text-muted small">App Development</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="col-12 col-md-6 col-lg-4 mix marketing">
+                    <div class="project-item">
+                        <figure>
+                            <img src="vendor/img/project3.jpg" alt="Project 3" />
+                            <a href="#" data-fancybox="gallery" class="overlay">
+                                <span class="lni-check-board"></span>
+                            </a>
+                        </figure>
+                        <div class="project-info">
+                            <h3>Digital Brand Strategy</h3>
+                            <p class="text-muted small">Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="col-12 col-md-6 col-lg-4 mix web-design">
+                    <div class="project-item">
+                        <figure>
+                            <img src="vendor/img/project4.jpg" alt="Project 4" />
+                            <a href="#" data-fancybox="gallery" class="overlay">
+                                <span class="lni-check-board"></span>
+                            </a>
+                        </figure>
+                        <div class="project-info">
+                            <h3>Corporate Website</h3>
+                            <p class="text-muted small">Web Design</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="col-12 col-md-6 col-lg-4 mix app-dev">
+                    <div class="project-item">
+                        <figure>
+                            <img src="vendor/img/project5.jpg" alt="Project 5" />
+                            <a href="#" data-fancybox="gallery" class="overlay">
+                                <span class="lni-check-board"></span>
+                            </a>
+                        </figure>
+                        <div class="project-info">
+                            <h3>Health Tracker</h3>
+                            <p class="text-muted small">App Development</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="col-12 col-md-6 col-lg-4 mix marketing">
+                    <div class="project-item">
+                        <figure>
+                            <img src="vendor/img/project6.jpg" alt="Project 6" />
+                            <a href="#" data-fancybox="gallery" class="overlay">
+                                <span class="lni-check-board"></span>
+                            </a>
+                        </figure>
+                        <div class="project-info">
+                            <h3>Social Media Campaign</h3>
+                            <p class="text-muted small">Marketing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Services Section -->
+    <section id="services" class="section bg-gray-light">
+        <div class="container">
+            <div class="portfolio-section-title">
+                <h2>Capabilities</h2>
+                <p class="text-muted">What we bring to the table.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="icon text-primary mb-3">
+                            <span class="lni-laptop-code fa-3x"></span>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p class="text-muted">Building scalable, fast, and responsive websites using modern technologies.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="icon text-warning mb-3">
+                            <span class="lni-mobile fa-3x"></span>
+                        </div>
+                        <h4>App Design</h4>
+                        <p class="text-muted">Creating intuitive and beautiful user experiences for mobile applications.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="icon text-danger mb-3">
+                            <span class="lni-bar-chart fa-3x"></span>
+                        </div>
+                        <h4>SEO & Marketing</h4>
+                        <p class="text-muted">Optimizing your digital presence to reach your target audience effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact -->
+    <section id="contact" class="section bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Start Your Project?</h2>
+            <p class="lead mb-4">Let's collaborate to bring your vision to life.</p>
+            <a href="mailto:contact@pandapanda.com" class="btn btn-theme btn-lg px-5 py-3">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer bg-black text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold text-white mb-3">About Panda</h5>
+                    <p class="small text-secondary">We are a team of dedicated developers and designers passionate about building the web of tomorrow.</p>
+                </div>
+                <div class="col-lg-2 offset-lg-1 mb-4 mb-lg-0">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled text-secondary small">
+                        <li><a href="index.html" class="text-secondary text-decoration-none hover-white">Home</a></li>
+                        <li><a href="portfolio.html" class="text-secondary text-decoration-none hover-white">Portfolio</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">About Us</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <ul class="social-links list-inline mb-3">
+                        <li class="list-inline-item"><a href="#" class="text-secondary"><i class="lni-facebook-filled"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-secondary"><i class="lni-twitter-original"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-secondary"><i class="lni-instagram-filled"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-secondary"><i class="lni-linkedin-original"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center small text-secondary">
+                &copy; 2026 Panda Templates. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="vendor/js/jquery-3.5.1.min.js"></script>
+    <script src="vendor/js/popper.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="vendor/js/revolution.tools.min.js"></script>
+    <script src="vendor/js/wow.min.js"></script>
+    <script src="vendor/js/jquery.cubeportfolio.min.js"></script>
+    <script src="vendor/js/jquery.fancybox.min.js"></script>
+    <script src="vendor/js/owl.carousel.min.js"></script>
+    <script src="innovative-startup/custom.js"></script>
+</body>
+</html>
